@@ -1,31 +1,22 @@
 #include<iostream>
 using namespace std;
 
-void funB(int );
-void funA(int n)
+int power(int m,int n)
 {
 
-    if(n>0)
-    {
-
-        cout<<n<<endl;
-        funB(n-1);
-    }
-}
-void funB(int n)
-{
-
-    if(n>1){
-        cout<<n<<endl;
-        funA(n/2);
-    }
+    if(n==0)
+        return 1;
+    if(n%2==0)
+    return power(m*m,n/2);
+    else
+        return m*power(m*m,(n-1)/2);
 }
 int main()
 {
 
 
-    funA(20);
-
+   int n = power(2,3);
+   cout<<n;
 }
 /*
 op:
