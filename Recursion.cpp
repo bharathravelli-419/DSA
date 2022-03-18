@@ -1,24 +1,23 @@
 #include<iostream>
 using namespace std;
 
-double e(int x,int n)
+int ncr(int n,int r)
 {
-    static double s =1;
-   if(n==0)
-    return s;
-   s = (s*x/n) + 1;
-   return e(x,n-1);
+    if(n==r || r==0)
+        return 1;
+    else
+        return ncr(n-1,r-1)+ncr(n-1,r);
 
 }
 int main()
 {
-double result = e(4,15);
+int result = ncr(4,2);
 cout<<result;
 
 
 }
 /*
 op:
-54.5979
+6
 
 */
