@@ -1,24 +1,40 @@
 #include<iostream>
 using namespace std;
-int x=0;
-void fun(int n)
-{
-  x++;
-if(n>0)
+
+void funB(int );
+void funA(int n)
 {
 
-cout<<n<<endl;
-   fun(n-1);
-   fun(n-1);
+    if(n>0)
+    {
 
+        cout<<n<<endl;
+        funB(n-1);
+    }
 }
+void funB(int n)
+{
 
-
+    if(n>1){
+        cout<<n<<endl;
+        funA(n/2);
+    }
 }
 int main()
 {
 
 
-    fun(3);
-    cout<<"the count of recursive calls is :"<<x;
+    funA(20);
+
 }
+/*
+op:
+20
+19
+9
+8
+4
+3
+1
+
+*/
