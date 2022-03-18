@@ -1,25 +1,30 @@
 #include<iostream>
 using namespace std;
 
-int power(int m,int n)
+double e(int x,int n)
 {
-
+    static double p=1,f=1;
+    double r;
     if(n==0)
         return 1;
-    if(n%2==0)
-    return power(m*m,n/2);
     else
-        return m*power(m*m,(n-1)/2);
+    {
+        r = e(x,n-1);
+        p=p*x;
+        f= f*n;
+        return r+p/f;
+
+    }
 }
 int main()
 {
+double result = e(4,15);
+cout<<result;
 
 
-   int n = power(2,3);
-   cout<<n;
 }
 /*
 op:
-8
+54.5979
 
 */
