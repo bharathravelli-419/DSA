@@ -1,23 +1,18 @@
 #include<iostream>
 using namespace std;
-
-int ncr(int n,int r)
+void toh(int n,int A,int B,int C)
 {
-    if(n==r || r==0)
-        return 1;
-    else
-        return ncr(n-1,r-1)+ncr(n-1,r);
 
+    if(n>0)
+    {
+
+        toh(n-1,A,C,B);
+        cout<<A<<"  to "<<C<<endl;
+        toh(n-1,B,A,C );
+    }
 }
 int main()
 {
-int result = ncr(4,2);
-cout<<result;
 
-
+  toh(3,1,2,3);
 }
-/*
-op:
-6
-
-*/
