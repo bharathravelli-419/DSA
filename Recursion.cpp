@@ -16,3 +16,13 @@ int main()
 
   toh(3,1,2,3);
 }
+/*
+op:
+1  to 3
+1  to 2
+3  to 2
+1  to 3
+2  to 1
+2  to 3
+1  to 3
+*/
